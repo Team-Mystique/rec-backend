@@ -1,6 +1,6 @@
 # Rise Edu consult WebApp
 
-# ![alt text](<Rec Logo Blue.jpg>) Rise Edu Consult Website
+# ![alt text](<Rec Logo Blue.jpg>) Rise Edu Consult WebApp
 
 This is the official academic project for Rise Edu Consult, developed by Team Mystique as part of the DCIT 208 Software Engineering course at the University of Ghana.
 
@@ -13,6 +13,7 @@ This is the official academic project for Rise Edu Consult, developed by Team My
 - **Version Control**: Git + GitHub
 - **Design**: Figma
 - **Project Management**: Trello (Agile/Scrum)
+  
 
 ## Project Structure
 
