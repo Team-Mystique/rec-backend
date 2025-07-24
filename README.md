@@ -1,2 +1,2 @@
-# Rise Edu consult Website
+# Rise Edu consult WebApp
 
