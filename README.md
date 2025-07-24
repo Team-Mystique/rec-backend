@@ -1,4 +1,4 @@
-# Rise Edu consult Website
+# Rise Edu consult WebApp
 
 # ![alt text](<Rec Logo Blue.jpg>) Rise Edu Consult Website
 
@@ -17,7 +17,7 @@ This is the official academic project for Rise Edu Consult, developed by Team My
 ## Project Structure
 
 ```
-rec-website/
+rec-webApp/
 ├── frontend/              # React app
 │   ├── public/
 │   ├── src/
@@ -46,7 +46,7 @@ rec-website/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Team-Mystique/REC-Website.git
+git clone https://github.com/Team-Mystique/REC-WebApp.git
 cd REC-website
 ```
 
