@@ -1,2 +1,20 @@
+# Node modules (dependencies)
 node_modules/
+
+# Environment variables
 .env
+
+# Logs
+logs/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# OS-specific
+*.swp
+
+# IDE/editor settings
+.vscode/
+.idea/
