@@ -101,5 +101,11 @@ PORT=5000
 | Prince Kwaku Enam Ametefe       | Backend Developer |
 
 ---
-![](<Team Logo.png>)
+
 © 2025 Team Mystique — UG Legon
+
+<div align="center">
+  <img src="Team Logo.png" alt="Team Logo" width="250"/>
+</div>
+
+
