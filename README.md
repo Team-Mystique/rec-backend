@@ -1,33 +1,22 @@
-# Rise Edu consult WebApp
+# Rise Edu consult WebApp-Backend
 
 
 
 This is the official academic project for Rise Edu Consult, developed by Team Mystique as part of the DCIT 208 Software Engineering course at the University of Ghana.
 
-##  Project Stack
+#  Tech Stack
 
-- **Frontend**: React.js (HTML, CSS, JavaScript)
 - **Backend**: Node.js + Express.js
 - **Database**: MongoDB Atlas (Cloud)
-- **Hosting**: GitHub Pages (Frontend), Render/Fly.io (for backend API)
+- **Hosting**: Render/Fly.io (for backend API)
 - **Version Control**: Git + GitHub
-- **Design**: Figma
 - **Project Management**: Trello (Agile/Scrum)
   
 
-## Project Structure
+## Project | Backend Structure
 
 ```
-rec-webApp/
-├── frontend/              # React app
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── styles/
-│   │   ├── App.js
-│   │   └── index.js
-│   └── package.json
+
 
 ├── backend/               # Node.js + Express API
 │   ├── controllers/
@@ -46,12 +35,6 @@ rec-webApp/
 
 ### 1. Clone the repository
 
-#### Frontend
-```bash
-git clone https://github.com/Team-Mystique/REC-WebApp-frontend.git
-cd REC-webapp
-```
-
 
 #### Backend
 ```bash
@@ -59,20 +42,13 @@ git clone https://github.com/Team-Mystique/REC-WebApp-backend.git
 cd REC-webapp
 ```
 
-### 2. Set up the frontend (React)
 
-```bash
-cd frontend
-npm install
-npm start
-```
-
-### 3. Set up the backend (Node.js + Express)
+### 2. Set up the backend (Node.js + Express)
 
 ```bash
 cd ../backend
 npm install
-node server.js
+node server.js 0r npm run dev
 ```
 
 Create a `.env` file with the following:
@@ -84,7 +60,6 @@ PORT=5000
 
 ## Deployment Plan
 
-- **Frontend**: GitHub Pages / Netlify
 - **Backend**: Render or Fly.io (free tiers)
 - **Database**: MongoDB Atlas (Free Cluster)
 
