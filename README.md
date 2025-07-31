@@ -38,15 +38,15 @@ This is the official academic project for Rise Edu Consult, developed by Team My
 
 #### Backend
 ```bash
-git clone https://github.com/Team-Mystique/REC-WebApp-backend.git
-cd REC-webapp
+git clone https://github.com/Team-Mystique/rec-backend.git
+cd rec-backend 
 ```
 
 
 ### 2. Set up the backend (Node.js + Express)
 
 ```bash
-cd ../backend
+cd ../rec-backend
 npm install
 node server.js 0r npm run dev
 ```
