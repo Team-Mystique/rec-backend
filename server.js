@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const connectDB = require('./config/db');
+const routes = require('./routes/index');
 
 //Load environment variables
 dotenv.config();
@@ -15,7 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 //Define routes
-app.use('/', require('./routes/index'));
+app.use('/', routes);
+app.use('/api', routes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
