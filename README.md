@@ -66,7 +66,7 @@ PORT=5000
 
 **Note**: You can copy `.env.example` to `.env` and update the values.
 
-## 📚 API Documentation
+## API Documentation
 
 ### Authentication Endpoints
 
