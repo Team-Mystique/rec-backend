@@ -9,8 +9,25 @@ const register = async (req, res) => {
     const { name, email, password, role } = req.body;
 
     // Validate fields
-    if (!name || !email || !password) {
-      return res.status(400).json({ message: "All fields are required" });
+    if (!name || !email || !password || !role) {
+      return res.status(400).json({ message: "All fields (name, email, password, role) are required" });
+    }
+
+    // Validate role
+    const validRoles = ['admin', 'student'];
+    if (!validRoles.includes(role)) {
+      return res.status(400).json({ message: "Role must be either 'admin' or 'student'" });
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ message: "Please provide a valid email address" });
+    }
+
+    // Validate password strength
+    if (password.length < 6) {
+      return res.status(400).json({ message: "Password must be at least 6 characters long" });
     }
 
     // Check if user already exists
@@ -42,8 +59,10 @@ const register = async (req, res) => {
     });
 
   } catch (error) {
+    console.error('Registration error:', error);
     res.status(500).json({
-      message: "Failed to register user"
+      message: "Failed to register user",
+      error: error.message
     });
   }
 };
@@ -56,6 +75,11 @@ const login = async (req, res) => {
     // Validate inputs
     if (!email || !password) {
       return res.status(400).json({ message: "Email and password are required" });
+    }
+
+    // Validate JWT_SECRET is configured
+    if (!process.env.JWT_SECRET) {
+      return res.status(500).json({ message: "JWT secret not configured" });
     }
 
     // Find user
@@ -80,12 +104,20 @@ const login = async (req, res) => {
     return res.status(200).json({
       status: "success",
       message: "User logged in successfully",
-      accessToken
+      accessToken,
+      user: {
+        id: getUser._id,
+        name: getUser.name,
+        email: getUser.email,
+        role: getUser.role
+      }
     });
 
   } catch (error) {
+    console.error('Login error:', error);
     return res.status(500).json({
-      message: "Failed to login user"
+      message: "Failed to login user",
+      error: error.message
     });
   }
 };
