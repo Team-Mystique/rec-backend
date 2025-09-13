@@ -48,14 +48,71 @@ cd rec-backend
 ```bash
 cd ../rec-backend
 npm install
-node server.js 0r npm run dev
+node server.js or npm run dev
 ```
 
 Create a `.env` file with the following:
 
 ```
-MONGO_URI=your_mongodb_connection_string
+# MongoDB Connection (use either MONGODB_URI or MONGO_URI)
+MONGODB_URI=your_mongodb_connection_string
+
+# JWT Secret Key (generate a strong random string)
+JWT_SECRET=your_jwt_secret_key_here
+
+# Server Port (optional, defaults to 5000)
 PORT=5000
+```
+
+**Note**: You can copy `.env.example` to `.env` and update the values.
+
+## 📚 API Documentation
+
+### Authentication Endpoints
+
+#### Register User
+```http
+POST /register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com", 
+  "password": "password123",
+  "role": "student"  // or "admin"
+}
+```
+
+#### Login User
+```http
+POST /login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+### Protected Endpoints (Require Authentication)
+Include `Authorization: Bearer <token>` header for all protected routes.
+
+#### Dashboard Routes
+- `GET /api/dashboard` - Get user dashboard data
+- `GET /api/profile` - Get user profile
+- `PUT /api/profile` - Update user profile
+
+#### Admin Routes (Admin Only)
+- `GET /api/admin/users` - Get all users (with pagination)
+- `GET /api/admin/users/:id` - Get user by ID
+- `PUT /api/admin/users/:id` - Update user
+- `DELETE /api/admin/users/:id` - Delete user
+- `GET /api/admin/stats` - Get admin statistics
+
+### Testing with JWT Token
+Use the `generate-token.js` script to create test tokens:
+```bash
+node generate-token.js
 ```
 
 ## Deployment Plan
