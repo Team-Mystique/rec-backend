@@ -62,9 +62,43 @@ JWT_SECRET=your_jwt_secret_key_here
 
 # Server Port (optional, defaults to 5000)
 PORT=5000
+
+# Frontend Configuration
+FRONTEND_URL=http://localhost:3000
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001,https://rec-frontend.vercel.app
 ```
 
 **Note**: You can copy `.env.example` to `.env` and update the values.
+
+## 🔗 Frontend-Backend Connection
+
+This backend is configured for seamless frontend integration with proper CORS, authentication, and error handling.
+
+### Quick Connection Test
+```bash
+# Test backend connectivity
+./test-frontend-connection.sh
+
+# Or check health endpoint
+curl http://localhost:5000/health
+```
+
+### Key Features for Frontend Integration
+- ✅ **CORS Configuration**: Supports multiple frontend origins
+- ✅ **Health Check Endpoint**: `GET /health` for connectivity testing
+- ✅ **API Documentation**: `GET /api-info` for endpoint information
+- ✅ **Request Logging**: Logs all requests for debugging
+- ✅ **Error Handling**: Consistent error responses for frontend
+- ✅ **JWT Authentication**: Secure token-based authentication
+
+### For Frontend Developers
+📖 **Complete integration guide**: See [FRONTEND_INTEGRATION.md](./FRONTEND_INTEGRATION.md)
+
+**Quick Start:**
+1. Set your frontend API URL: `http://localhost:5000`
+2. Use health check: `GET /health`
+3. Get API documentation: `GET /api-info`
+4. Include `Authorization: Bearer <token>` for protected routes
 
 ## API Documentation
 
@@ -108,6 +142,10 @@ Include `Authorization: Bearer <token>` header for all protected routes.
 - `PUT /api/admin/users/:id` - Update user
 - `DELETE /api/admin/users/:id` - Delete user
 - `GET /api/admin/stats` - Get admin statistics
+
+### Utility Endpoints
+- `GET /health` - Health check for frontend connectivity
+- `GET /api-info` - Complete API documentation and CORS information
 
 ### Testing with JWT Token
 Use the `generate-token.js` script to create test tokens:
